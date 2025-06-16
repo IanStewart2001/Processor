@@ -1,7 +1,7 @@
 CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o: \
-  /Users/ian/Code/C++/DSP_Project/external/kissfft/kiss_fft.c \
-  /Users/ian/Code/C++/DSP_Project/external/kissfft/_kiss_fft_guts.h \
-  /Users/ian/Code/C++/DSP_Project/external/kissfft/kiss_fft.h \
+  /Users/ian/Code/C++/DSP_Project/backend/external/kissfft/kiss_fft.c \
+  /Users/ian/Code/C++/DSP_Project/backend/external/kissfft/_kiss_fft_guts.h \
+  /Users/ian/Code/C++/DSP_Project/backend/external/kissfft/kiss_fft.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdlib.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdlib.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -95,7 +95,7 @@ CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_strings.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_strings.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h \
-  /Users/ian/Code/C++/DSP_Project/external/kissfft/kiss_fft_log.h \
+  /Users/ian/Code/C++/DSP_Project/backend/external/kissfft/kiss_fft_log.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/limits.h \

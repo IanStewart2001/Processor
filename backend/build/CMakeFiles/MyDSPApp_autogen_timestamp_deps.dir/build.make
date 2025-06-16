@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ian/Code/C++/DSP_Project
+CMAKE_SOURCE_DIR = /Users/ian/Code/C++/DSP_Project/backend
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ian/Code/C++/DSP_Project/build
+CMAKE_BINARY_DIR = /Users/ian/Code/C++/DSP_Project/backend/build
 
 # Utility rule file for MyDSPApp_autogen_timestamp_deps.
 
@@ -81,6 +81,6 @@ CMakeFiles/MyDSPApp_autogen_timestamp_deps.dir/clean:
 .PHONY : CMakeFiles/MyDSPApp_autogen_timestamp_deps.dir/clean
 
 CMakeFiles/MyDSPApp_autogen_timestamp_deps.dir/depend:
-	cd /Users/ian/Code/C++/DSP_Project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ian/Code/C++/DSP_Project /Users/ian/Code/C++/DSP_Project /Users/ian/Code/C++/DSP_Project/build /Users/ian/Code/C++/DSP_Project/build /Users/ian/Code/C++/DSP_Project/build/CMakeFiles/MyDSPApp_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/ian/Code/C++/DSP_Project/backend/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ian/Code/C++/DSP_Project/backend /Users/ian/Code/C++/DSP_Project/backend /Users/ian/Code/C++/DSP_Project/backend/build /Users/ian/Code/C++/DSP_Project/backend/build /Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles/MyDSPApp_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/MyDSPApp_autogen_timestamp_deps.dir/depend
 

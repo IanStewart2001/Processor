@@ -1,6 +1,6 @@
 CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o: \
-  /Users/ian/Code/C++/DSP_Project/src/signalClass.cpp \
-  /Users/ian/Code/C++/DSP_Project/include/signalClass.h \
+  /Users/ian/Code/C++/DSP_Project/backend/src/signalClass.cpp \
+  /Users/ian/Code/C++/DSP_Project/backend/include/signalClass.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy_move_common.h \
@@ -816,5 +816,5 @@ CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
-  /Users/ian/Code/C++/DSP_Project/include/kiss_fft_wrapper.h \
-  /Users/ian/Code/C++/DSP_Project/external/kissfft/kiss_fft.h
+  /Users/ian/Code/C++/DSP_Project/backend/include/kiss_fft_wrapper.h \
+  /Users/ian/Code/C++/DSP_Project/backend/external/kissfft/kiss_fft.h

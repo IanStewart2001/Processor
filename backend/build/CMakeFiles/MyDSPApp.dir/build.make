@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ian/Code/C++/DSP_Project
+CMAKE_SOURCE_DIR = /Users/ian/Code/C++/DSP_Project/backend
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ian/Code/C++/DSP_Project/build
+CMAKE_BINARY_DIR = /Users/ian/Code/C++/DSP_Project/backend/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MyDSPApp.dir/depend.make
@@ -69,12 +69,12 @@ include CMakeFiles/MyDSPApp.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/MyDSPApp.dir/flags.make
 
-MyDSPApp_autogen/timestamp: /opt/homebrew/share/qt/libexec/moc
-MyDSPApp_autogen/timestamp: /opt/homebrew/share/qt/libexec/uic
+MyDSPApp_autogen/timestamp: /usr/local/share/qt/libexec/moc
+MyDSPApp_autogen/timestamp: /usr/local/share/qt/libexec/uic
 MyDSPApp_autogen/timestamp: CMakeFiles/MyDSPApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ian/Code/C++/DSP_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target MyDSPApp"
-	/usr/local/bin/cmake -E cmake_autogen /Users/ian/Code/C++/DSP_Project/build/CMakeFiles/MyDSPApp_autogen.dir/AutogenInfo.json ""
-	/usr/local/bin/cmake -E touch /Users/ian/Code/C++/DSP_Project/build/MyDSPApp_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target MyDSPApp"
+	/usr/local/bin/cmake -E cmake_autogen /Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles/MyDSPApp_autogen.dir/AutogenInfo.json ""
+	/usr/local/bin/cmake -E touch /Users/ian/Code/C++/DSP_Project/backend/build/MyDSPApp_autogen/timestamp
 
 CMakeFiles/MyDSPApp.dir/codegen:
 .PHONY : CMakeFiles/MyDSPApp.dir/codegen
@@ -82,72 +82,72 @@ CMakeFiles/MyDSPApp.dir/codegen:
 CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.o: CMakeFiles/MyDSPApp.dir/flags.make
 CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.o: MyDSPApp_autogen/mocs_compilation.cpp
 CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.o: CMakeFiles/MyDSPApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ian/Code/C++/DSP_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.o -MF CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.o -c /Users/ian/Code/C++/DSP_Project/build/MyDSPApp_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.o -MF CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.o -c /Users/ian/Code/C++/DSP_Project/backend/build/MyDSPApp_autogen/mocs_compilation.cpp
 
 CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ian/Code/C++/DSP_Project/build/MyDSPApp_autogen/mocs_compilation.cpp > CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ian/Code/C++/DSP_Project/backend/build/MyDSPApp_autogen/mocs_compilation.cpp > CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ian/Code/C++/DSP_Project/build/MyDSPApp_autogen/mocs_compilation.cpp -o CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ian/Code/C++/DSP_Project/backend/build/MyDSPApp_autogen/mocs_compilation.cpp -o CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/MyDSPApp.dir/src/main.cpp.o: CMakeFiles/MyDSPApp.dir/flags.make
-CMakeFiles/MyDSPApp.dir/src/main.cpp.o: /Users/ian/Code/C++/DSP_Project/src/main.cpp
+CMakeFiles/MyDSPApp.dir/src/main.cpp.o: /Users/ian/Code/C++/DSP_Project/backend/src/main.cpp
 CMakeFiles/MyDSPApp.dir/src/main.cpp.o: CMakeFiles/MyDSPApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ian/Code/C++/DSP_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MyDSPApp.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyDSPApp.dir/src/main.cpp.o -MF CMakeFiles/MyDSPApp.dir/src/main.cpp.o.d -o CMakeFiles/MyDSPApp.dir/src/main.cpp.o -c /Users/ian/Code/C++/DSP_Project/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MyDSPApp.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyDSPApp.dir/src/main.cpp.o -MF CMakeFiles/MyDSPApp.dir/src/main.cpp.o.d -o CMakeFiles/MyDSPApp.dir/src/main.cpp.o -c /Users/ian/Code/C++/DSP_Project/backend/src/main.cpp
 
 CMakeFiles/MyDSPApp.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyDSPApp.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ian/Code/C++/DSP_Project/src/main.cpp > CMakeFiles/MyDSPApp.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ian/Code/C++/DSP_Project/backend/src/main.cpp > CMakeFiles/MyDSPApp.dir/src/main.cpp.i
 
 CMakeFiles/MyDSPApp.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyDSPApp.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ian/Code/C++/DSP_Project/src/main.cpp -o CMakeFiles/MyDSPApp.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ian/Code/C++/DSP_Project/backend/src/main.cpp -o CMakeFiles/MyDSPApp.dir/src/main.cpp.s
 
 CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o: CMakeFiles/MyDSPApp.dir/flags.make
-CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o: /Users/ian/Code/C++/DSP_Project/src/signalClass.cpp
+CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o: /Users/ian/Code/C++/DSP_Project/backend/src/signalClass.cpp
 CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o: CMakeFiles/MyDSPApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ian/Code/C++/DSP_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o -MF CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o.d -o CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o -c /Users/ian/Code/C++/DSP_Project/src/signalClass.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o -MF CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o.d -o CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o -c /Users/ian/Code/C++/DSP_Project/backend/src/signalClass.cpp
 
 CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ian/Code/C++/DSP_Project/src/signalClass.cpp > CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ian/Code/C++/DSP_Project/backend/src/signalClass.cpp > CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.i
 
 CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ian/Code/C++/DSP_Project/src/signalClass.cpp -o CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ian/Code/C++/DSP_Project/backend/src/signalClass.cpp -o CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.s
 
 CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o: CMakeFiles/MyDSPApp.dir/flags.make
-CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o: /Users/ian/Code/C++/DSP_Project/src/kiss_fft_Wrapper.cpp
+CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o: /Users/ian/Code/C++/DSP_Project/backend/src/kiss_fft_Wrapper.cpp
 CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o: CMakeFiles/MyDSPApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ian/Code/C++/DSP_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o -MF CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o.d -o CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o -c /Users/ian/Code/C++/DSP_Project/src/kiss_fft_Wrapper.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o -MF CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o.d -o CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o -c /Users/ian/Code/C++/DSP_Project/backend/src/kiss_fft_Wrapper.cpp
 
 CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ian/Code/C++/DSP_Project/src/kiss_fft_Wrapper.cpp > CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ian/Code/C++/DSP_Project/backend/src/kiss_fft_Wrapper.cpp > CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.i
 
 CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ian/Code/C++/DSP_Project/src/kiss_fft_Wrapper.cpp -o CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ian/Code/C++/DSP_Project/backend/src/kiss_fft_Wrapper.cpp -o CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.s
 
 CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o: CMakeFiles/MyDSPApp.dir/flags.make
-CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o: /Users/ian/Code/C++/DSP_Project/external/kissfft/kiss_fft.c
+CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o: /Users/ian/Code/C++/DSP_Project/backend/external/kissfft/kiss_fft.c
 CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o: CMakeFiles/MyDSPApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ian/Code/C++/DSP_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o -MF CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o.d -o CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o -c /Users/ian/Code/C++/DSP_Project/external/kissfft/kiss_fft.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o -MF CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o.d -o CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o -c /Users/ian/Code/C++/DSP_Project/backend/external/kissfft/kiss_fft.c
 
 CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ian/Code/C++/DSP_Project/external/kissfft/kiss_fft.c > CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/ian/Code/C++/DSP_Project/backend/external/kissfft/kiss_fft.c > CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.i
 
 CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ian/Code/C++/DSP_Project/external/kissfft/kiss_fft.c -o CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/ian/Code/C++/DSP_Project/backend/external/kissfft/kiss_fft.c -o CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.s
 
 # Object files for target MyDSPApp
 MyDSPApp_OBJECTS = \
@@ -167,7 +167,7 @@ MyDSPApp: CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o
 MyDSPApp: CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o
 MyDSPApp: CMakeFiles/MyDSPApp.dir/build.make
 MyDSPApp: CMakeFiles/MyDSPApp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ian/Code/C++/DSP_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable MyDSPApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable MyDSPApp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MyDSPApp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -179,6 +179,6 @@ CMakeFiles/MyDSPApp.dir/clean:
 .PHONY : CMakeFiles/MyDSPApp.dir/clean
 
 CMakeFiles/MyDSPApp.dir/depend: MyDSPApp_autogen/timestamp
-	cd /Users/ian/Code/C++/DSP_Project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ian/Code/C++/DSP_Project /Users/ian/Code/C++/DSP_Project /Users/ian/Code/C++/DSP_Project/build /Users/ian/Code/C++/DSP_Project/build /Users/ian/Code/C++/DSP_Project/build/CMakeFiles/MyDSPApp.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/ian/Code/C++/DSP_Project/backend/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ian/Code/C++/DSP_Project/backend /Users/ian/Code/C++/DSP_Project/backend /Users/ian/Code/C++/DSP_Project/backend/build /Users/ian/Code/C++/DSP_Project/backend/build /Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles/MyDSPApp.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/MyDSPApp.dir/depend
 

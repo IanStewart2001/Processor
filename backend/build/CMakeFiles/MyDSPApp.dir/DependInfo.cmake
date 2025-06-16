@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/ian/Code/C++/DSP_Project/external/kissfft/kiss_fft.c" "CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o" "gcc" "CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o.d"
+  "/Users/ian/Code/C++/DSP_Project/backend/external/kissfft/kiss_fft.c" "CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o" "gcc" "CMakeFiles/MyDSPApp.dir/external/kissfft/kiss_fft.c.o.d"
   "" "MyDSPApp_autogen/timestamp" "custom" "MyDSPApp_autogen/deps"
-  "/Users/ian/Code/C++/DSP_Project/build/MyDSPApp_autogen/mocs_compilation.cpp" "CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.o.d"
-  "/Users/ian/Code/C++/DSP_Project/src/kiss_fft_Wrapper.cpp" "CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o" "gcc" "CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o.d"
-  "/Users/ian/Code/C++/DSP_Project/src/main.cpp" "CMakeFiles/MyDSPApp.dir/src/main.cpp.o" "gcc" "CMakeFiles/MyDSPApp.dir/src/main.cpp.o.d"
-  "/Users/ian/Code/C++/DSP_Project/src/signalClass.cpp" "CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o" "gcc" "CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o.d"
+  "/Users/ian/Code/C++/DSP_Project/backend/build/MyDSPApp_autogen/mocs_compilation.cpp" "CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/MyDSPApp.dir/MyDSPApp_autogen/mocs_compilation.cpp.o.d"
+  "/Users/ian/Code/C++/DSP_Project/backend/src/kiss_fft_Wrapper.cpp" "CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o" "gcc" "CMakeFiles/MyDSPApp.dir/src/kiss_fft_Wrapper.cpp.o.d"
+  "/Users/ian/Code/C++/DSP_Project/backend/src/main.cpp" "CMakeFiles/MyDSPApp.dir/src/main.cpp.o" "gcc" "CMakeFiles/MyDSPApp.dir/src/main.cpp.o.d"
+  "/Users/ian/Code/C++/DSP_Project/backend/src/signalClass.cpp" "CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o" "gcc" "CMakeFiles/MyDSPApp.dir/src/signalClass.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

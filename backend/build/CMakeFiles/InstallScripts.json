@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/Users/ian/Code/C++/DSP_Project/build/cmake_install.cmake"
+		"/Users/ian/Code/C++/DSP_Project/backend/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

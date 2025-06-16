@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ian/Code/C++/DSP_Project
+CMAKE_SOURCE_DIR = /Users/ian/Code/C++/DSP_Project/backend
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ian/Code/C++/DSP_Project/build
+CMAKE_BINARY_DIR = /Users/ian/Code/C++/DSP_Project/backend/build
 
 # Utility rule file for MyDSPApp_autogen.
 
@@ -68,12 +68,12 @@ include CMakeFiles/MyDSPApp_autogen.dir/progress.make
 
 CMakeFiles/MyDSPApp_autogen: MyDSPApp_autogen/timestamp
 
-MyDSPApp_autogen/timestamp: /opt/homebrew/share/qt/libexec/moc
-MyDSPApp_autogen/timestamp: /opt/homebrew/share/qt/libexec/uic
+MyDSPApp_autogen/timestamp: /usr/local/share/qt/libexec/moc
+MyDSPApp_autogen/timestamp: /usr/local/share/qt/libexec/uic
 MyDSPApp_autogen/timestamp: CMakeFiles/MyDSPApp_autogen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ian/Code/C++/DSP_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target MyDSPApp"
-	/usr/local/bin/cmake -E cmake_autogen /Users/ian/Code/C++/DSP_Project/build/CMakeFiles/MyDSPApp_autogen.dir/AutogenInfo.json ""
-	/usr/local/bin/cmake -E touch /Users/ian/Code/C++/DSP_Project/build/MyDSPApp_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target MyDSPApp"
+	/usr/local/bin/cmake -E cmake_autogen /Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles/MyDSPApp_autogen.dir/AutogenInfo.json ""
+	/usr/local/bin/cmake -E touch /Users/ian/Code/C++/DSP_Project/backend/build/MyDSPApp_autogen/timestamp
 
 CMakeFiles/MyDSPApp_autogen.dir/codegen:
 .PHONY : CMakeFiles/MyDSPApp_autogen.dir/codegen
@@ -92,6 +92,6 @@ CMakeFiles/MyDSPApp_autogen.dir/clean:
 .PHONY : CMakeFiles/MyDSPApp_autogen.dir/clean
 
 CMakeFiles/MyDSPApp_autogen.dir/depend:
-	cd /Users/ian/Code/C++/DSP_Project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ian/Code/C++/DSP_Project /Users/ian/Code/C++/DSP_Project /Users/ian/Code/C++/DSP_Project/build /Users/ian/Code/C++/DSP_Project/build /Users/ian/Code/C++/DSP_Project/build/CMakeFiles/MyDSPApp_autogen.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/ian/Code/C++/DSP_Project/backend/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ian/Code/C++/DSP_Project/backend /Users/ian/Code/C++/DSP_Project/backend /Users/ian/Code/C++/DSP_Project/backend/build /Users/ian/Code/C++/DSP_Project/backend/build /Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles/MyDSPApp_autogen.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/MyDSPApp_autogen.dir/depend
 

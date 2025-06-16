@@ -5,7 +5,7 @@
 # compile CXX with /usr/bin/c++
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/ian/Code/C++/DSP_Project/build/MyDSPApp_autogen/include -I/Users/ian/Code/C++/DSP_Project/include -I/Users/ian/Code/C++/DSP_Project/external/kissfft
+C_INCLUDES = -I/Users/ian/Code/C++/DSP_Project/backend/build/MyDSPApp_autogen/include -I/Users/ian/Code/C++/DSP_Project/backend/include -I/Users/ian/Code/C++/DSP_Project/backend/external/kissfft
 
 C_FLAGSx86_64 =  -arch x86_64
 
@@ -13,7 +13,7 @@ C_FLAGS =  -arch x86_64
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/ian/Code/C++/DSP_Project/build/MyDSPApp_autogen/include -I/Users/ian/Code/C++/DSP_Project/include -I/Users/ian/Code/C++/DSP_Project/external/kissfft
+CXX_INCLUDES = -I/Users/ian/Code/C++/DSP_Project/backend/build/MyDSPApp_autogen/include -I/Users/ian/Code/C++/DSP_Project/backend/include -I/Users/ian/Code/C++/DSP_Project/backend/external/kissfft
 
 CXX_FLAGSx86_64 = -std=gnu++17 -arch x86_64
 
