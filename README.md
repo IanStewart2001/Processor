@@ -1,4 +1,4 @@
-Basic Offline Digital Signal Processing Program with in Qt  
+Basic Offline Digital Signal Processing Program written with Qt  
 
 Build Instructions:
 
