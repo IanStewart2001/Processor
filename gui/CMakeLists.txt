@@ -42,4 +42,4 @@ target_link_libraries(GUI_APP PRIVATE
     Qt6::Widgets
 )
 
-find_package(Qt<QTVERSION> COMPONENTS Widgets)
+find_package(Qt6 COMPONENTS Widgets)
