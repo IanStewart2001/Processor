@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <vector>
 #include <complex>
+#include <QLineEdit>
 
 class QPushButton;
 class Window : public QWidget
@@ -13,6 +14,9 @@ class Window : public QWidget
 
     public:
         explicit Window(QWidget *parent = nullptr);
+        void create_widgets(QWidget* parent = nullptr);
+        void organize_widgets(QWidget* parent = nullptr);
+        bool validate_inputs();
 
         //data variable below must be changed to be initialized with a pointer instead of directly like it is right now when
         //it gets merged with backend logic and reads from a file
@@ -31,7 +35,12 @@ class Window : public QWidget
     private slots:
         void open_file_dialog();
     private:
+        QLabel* parameters_error;
         QPushButton* btn_file_select;
+        long int sample_rate;
+        float center_frequency;
+        QLineEdit* sample_rate_input;
+        QLineEdit* center_frequency_input;
         QPushButton* btn_show_constellation_plot;
         QPushButton* btn_show_time_domain;
         QLabel* filename_label;

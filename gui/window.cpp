@@ -2,56 +2,102 @@
 #include "widgets/constellation_plot.h"
 #include "widgets/time_domain.h"
 #include <QPushButton>
-#include <QVBoxLayout>
 #include <QFileDialog>
 #include <QLabel>
 #include <vector>
 #include <complex>
+#include <QGridLayout>
 
 Window::Window(QWidget *parent) : QWidget(parent)
 {
     //sets initial size and position
     move(0,0);
-    setMinimumSize(200, 200);
+    setMinimumSize(500, 300);
 
-    // Create and position the button
-    btn_file_select = new QPushButton("Select file", this);
-    //button->setGeometry(10, 10, 80, 30);
-
-    //sets up buttons to show plots
-    btn_show_constellation_plot = new QPushButton("Show constellation plot", this);
-    btn_show_constellation_plot->setGeometry(50, 50, 200, 100);
-    btn_show_constellation_plot->hide();
-
-    btn_show_time_domain = new QPushButton("Show Time Domain", this);
-    btn_show_time_domain->setGeometry(50, 50, 200, 100);
-    btn_show_time_domain->hide();
-
-    filename_label = new QLabel(this);
+    create_widgets(this);
+    organize_widgets(this);
 
     connect(btn_file_select, &QPushButton::clicked, this, &Window::open_file_dialog);
 
     //Connects buttons to show the various plots
     connect(btn_show_constellation_plot, &QPushButton::clicked, this, [this]() {
-        auto* constellation_plot_widget = new constellation_plot(this);  // Or use `nullptr` if you want it to be a top-level window
-        constellation_plot_widget->setAttribute(Qt::WA_DeleteOnClose);
-        constellation_plot_widget->show();
+        if(validate_inputs()){
+            auto* constellation_plot_widget = new constellation_plot(this);  // Or use `nullptr` if you want it to be a top-level window
+            constellation_plot_widget->setAttribute(Qt::WA_DeleteOnClose);
+            constellation_plot_widget->show();
+        }
     });
 
     connect(btn_show_time_domain, &QPushButton::clicked, this, [this]() {
-        auto* time_domain_widget = new time_domain(this, sample_data);  // Or use `nullptr` if you want it to be a top-level window
-        time_domain_widget->setAttribute(Qt::WA_DeleteOnClose);
-        time_domain_widget->show();
+        if (validate_inputs()){
+            auto* time_domain_widget = new time_domain(this, sample_data);  // Or use `nullptr` if you want it to be a top-level window
+            time_domain_widget->setAttribute(Qt::WA_DeleteOnClose);
+            time_domain_widget->show();
+        }
     });
+}
 
+void Window::create_widgets(QWidget* parent){
+    //Button to choose file
+    btn_file_select = new QPushButton("Select file", parent);
+    btn_file_select->setFixedWidth(200);
 
+    //Entries prompting user for sample rate and center frequency
+    sample_rate_input = new QLineEdit(parent);
+    sample_rate_input->setPlaceholderText("Sample Rate (Hz)");
+    sample_rate_input->hide();
 
-    auto* layout = new QVBoxLayout(this);
-    layout->addWidget(btn_file_select);
-    layout->addWidget(filename_label);
-    layout->addWidget(btn_show_constellation_plot);
-    layout->addWidget(btn_show_time_domain);
-    setLayout(layout);
+    center_frequency_input = new QLineEdit(parent);
+    center_frequency_input->setPlaceholderText("Center Frequency (Hz)");
+    center_frequency_input->hide();
+
+    sample_rate_input->setFixedWidth(200);
+    center_frequency_input->setFixedWidth(200);
+
+    parameters_error = new QLabel(parent);
+    parameters_error->setStyleSheet("color: red;");
+    parameters_error->hide();
+
+    //sets up buttons to show plots
+    btn_show_constellation_plot = new QPushButton("Show constellation plot", parent);
+    btn_show_constellation_plot->setFixedWidth(200);
+    btn_show_constellation_plot->hide();
+
+    btn_show_time_domain = new QPushButton("Show Time Domain", parent);
+    btn_show_time_domain->setFixedWidth(200);
+    btn_show_time_domain->hide();
+
+    //Label for chosen filename
+    filename_label = new QLabel(parent);
+}
+
+void Window::organize_widgets(QWidget* parent) {
+    auto* layout = new QGridLayout(parent);
+
+    layout->setVerticalSpacing(0);
+    layout->setHorizontalSpacing(10);
+    layout->setContentsMargins(10, 0, 10, 0);
+
+    layout->setColumnStretch(0, 0); // Label/Input
+    layout->setColumnStretch(1, 0); // Input field
+
+    int row = 0;
+
+    layout->addWidget(btn_file_select, row++, 0, 1, 2);
+    layout->addWidget(filename_label, row++, 0, 1, 2);
+
+    layout->addWidget(parameters_error, row++, 0, 1, 2);
+
+    layout->addWidget(new QLabel("Sample Rate (Hz):", this), row++, 0, Qt::AlignLeft);
+    layout->addWidget(sample_rate_input, row++, 0);
+
+    layout->addWidget(new QLabel("Center Frequency (Hz):", this), row++, 0, Qt::AlignLeft);
+    layout->addWidget(center_frequency_input, row++, 0);
+
+    layout->addWidget(btn_show_constellation_plot, row++, 0, 1, 2, Qt::AlignLeft);
+    layout->addWidget(btn_show_time_domain, row++, 0, 1, 2, Qt::AlignLeft);
+
+    this->setLayout(layout);
 }
 
 void Window::open_file_dialog(){
@@ -59,7 +105,22 @@ void Window::open_file_dialog(){
 
     if (!filePath.isEmpty()){
         this->filename_label->setText(filePath);
+        sample_rate_input->show();
+        center_frequency_input->show();
         btn_show_constellation_plot->show();
         btn_show_time_domain->show();
+    }
+}
+
+bool Window::validate_inputs(){
+    if (sample_rate_input->text().isEmpty() || center_frequency_input->text().isEmpty()){
+        parameters_error->setText("Enter Sample Rate and Center Frequency");
+        parameters_error->show();
+        return false;
+    } else {
+        parameters_error->hide();
+        sample_rate = static_cast<long int> (sample_rate_input->text().toLong());
+        center_frequency = static_cast<float> (center_frequency_input->text().toDouble());
+        return true;
     }
 }
