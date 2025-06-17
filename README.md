@@ -1,3 +1,5 @@
+Basic Offline Digital Signal Processing Program with in Qt  
+
 Build Instructions:
 
 mkdir build  
