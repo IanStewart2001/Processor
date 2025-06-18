@@ -7,6 +7,7 @@
 #include <vector>
 #include <complex>
 #include <QGridLayout>
+#include <iostream>
 
 Window::Window(QWidget *parent) : QWidget(parent)
 {
@@ -22,15 +23,18 @@ Window::Window(QWidget *parent) : QWidget(parent)
     //Connects buttons to show the various plots
     connect(btn_show_constellation_plot, &QPushButton::clicked, this, [this]() {
         if(validate_inputs()){
-            auto* constellation_plot_widget = new constellation_plot(this);  // Or use `nullptr` if you want it to be a top-level window
-            constellation_plot_widget->setAttribute(Qt::WA_DeleteOnClose);
-            constellation_plot_widget->show();
+            //auto* constellation_plot_widget = new constellation_plot(this, sample_data);
+            //auto* constellation_plot_widget = new constellation_plot(this, signal->get_baseband_data());  // Or use `nullptr` if you want it to be a top-level window
+            //constellation_plot_widget->setAttribute(Qt::WA_DeleteOnClose);
+            //constellation_plot_widget->show();
         }
     });
 
     connect(btn_show_time_domain, &QPushButton::clicked, this, [this]() {
         if (validate_inputs()){
-            auto* time_domain_widget = new time_domain(this, sample_data);  // Or use `nullptr` if you want it to be a top-level window
+            //auto* time_domain_widget = new time_domain(this, sample_data);
+            std::cout << signal->get_baseband_data().at(0) << std::endl;
+            auto* time_domain_widget = new time_domain(this, signal->get_baseband_data());  // Or use `nullptr` if you want it to be a top-level window
             time_domain_widget->setAttribute(Qt::WA_DeleteOnClose);
             time_domain_widget->show();
         }
@@ -121,6 +125,7 @@ bool Window::validate_inputs(){
         parameters_error->hide();
         sample_rate = static_cast<long int> (sample_rate_input->text().toLong());
         center_frequency = static_cast<float> (center_frequency_input->text().toDouble());
+        signal = new Signal("/Users/ian/GNU_Radio_Generated_IQ_Files/FSK_416000_SR_100000_CF_52000_MR.iq");
         return true;
     }
 }

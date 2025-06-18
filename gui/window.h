@@ -1,6 +1,7 @@
 #pragma once
 #include "widgets/power_spectrum.h"
 #include "widgets/constellation_plot.h"
+#include "signalClass.h"
 #include <QWidget>
 #include <QLabel>
 #include <vector>
@@ -17,9 +18,12 @@ class Window : public QWidget
         void create_widgets(QWidget* parent = nullptr);
         void organize_widgets(QWidget* parent = nullptr);
         bool validate_inputs();
+        Signal* signal = nullptr;
+
 
         //data variable below must be changed to be initialized with a pointer instead of directly like it is right now when
         //it gets merged with backend logic and reads from a file
+        /*
         std::vector<std::complex<float> > sample_data = {
             {-0.0187061,0.0793967},
             {0.469499,2.52071},
@@ -32,6 +36,7 @@ class Window : public QWidget
             {0.0174773,0.2913},
             {-0.374692,-1.735}
         };
+        */
     private slots:
         void open_file_dialog();
     private:

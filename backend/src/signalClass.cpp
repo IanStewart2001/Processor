@@ -3,7 +3,6 @@
 #include "kiss_fft_wrapper.h"
 
 Signal::Signal(std::string filename){
-    filename = filename;
     iq_data = read_in_file(filename);
     sample_rate = 500000;
     center_frequency = 100000;
@@ -44,7 +43,6 @@ long int Signal::get_sample_rate(){
 
 std::vector<std::complex<float> > Signal::down_convert(){
     std::vector<std::complex<float> > baseband_data(iq_data.size());
-    std::cout << "sample rate " << sample_rate << "center frequency " << center_frequency << std::endl;
     //creating a vector of complex values at -carrier_frequency.
     std::vector<std::complex<float> > local_oscillator(iq_data.size()); 
     for (int n = 0; n < iq_data.size(); n++){
