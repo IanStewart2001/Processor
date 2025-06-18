@@ -1378,6 +1378,7 @@ GUI_APP_autogen/timestamp: \
 	/usr/local/Cellar/qt/6.9.0/lib/QtPrintSupport.framework/Versions/A/Headers/qtprintsupportexports.h \
 	/usr/local/Cellar/qt/6.9.0/lib/QtPrintSupport.framework/Versions/A/Headers/qtprintsupportglobal.h \
 	/usr/local/Cellar/qt/6.9.0/lib/QtPrintSupport.framework/Versions/A/Headers/qtprintsupportversion.h \
+	/usr/local/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/QComboBox \
 	/usr/local/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/QCommonStyle \
 	/usr/local/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/QLabel \
 	/usr/local/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/QLayout \
