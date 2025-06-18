@@ -18,7 +18,7 @@ time_domain::time_domain(QWidget* parent, const std::vector<std::complex<float> 
     time_domain_plot->addGraph();
     time_domain_plot->graph(0)->setPen(QPen(Qt::blue));
     time_domain_plot->graph(1)->setPen(QPen(Qt::red));
-    time_domain_plot->xAxis->setLabel("Time");
+    time_domain_plot->xAxis->setLabel("Samples");
     time_domain_plot->yAxis->setLabel("Voltage");
 
     //Makes graph interactive

@@ -8,6 +8,7 @@
 #include <complex>
 #include <QGridLayout>
 #include <iostream>
+#include <QComboBox>
 
 Window::Window(QWidget *parent) : QWidget(parent)
 {
@@ -24,9 +25,9 @@ Window::Window(QWidget *parent) : QWidget(parent)
     connect(btn_show_constellation_plot, &QPushButton::clicked, this, [this]() {
         if(validate_inputs()){
             //auto* constellation_plot_widget = new constellation_plot(this, sample_data);
-            //auto* constellation_plot_widget = new constellation_plot(this, signal->get_baseband_data());  // Or use `nullptr` if you want it to be a top-level window
-            //constellation_plot_widget->setAttribute(Qt::WA_DeleteOnClose);
-            //constellation_plot_widget->show();
+            auto* constellation_plot_widget = new constellation_plot(this, signal->get_baseband_data());  // Or use `nullptr` if you want it to be a top-level window
+            constellation_plot_widget->setAttribute(Qt::WA_DeleteOnClose);
+            constellation_plot_widget->show();
         }
     });
 
@@ -39,12 +40,25 @@ Window::Window(QWidget *parent) : QWidget(parent)
             time_domain_widget->show();
         }
     });
+
+    connect(data_type_selector, &QComboBox::currentIndexChanged, this, [](int index) {
+        qDebug() << "Selected index:" << index;
+    });
 }
 
 void Window::create_widgets(QWidget* parent){
     //Button to choose file
     btn_file_select = new QPushButton("Select file", parent);
     btn_file_select->setFixedWidth(200);
+
+    //Selector to choose file data type
+    data_type_selector = new QComboBox(parent);
+    data_type_selector->addItem("Choose data type");
+    data_type_selector->addItem("int8 (char)");
+    data_type_selector->addItem("uint8");
+    data_type_selector->addItem("int16");
+    data_type_selector->addItem("complex64 (complex<float>)");
+    data_type_selector->addItem("complex128 (complex<double>)");
 
     //Entries prompting user for sample rate and center frequency
     sample_rate_input = new QLineEdit(parent);
@@ -89,6 +103,8 @@ void Window::organize_widgets(QWidget* parent) {
 
     layout->addWidget(btn_file_select, row++, 0, 1, 2);
     layout->addWidget(filename_label, row++, 0, 1, 2);
+
+    layout->addWidget(data_type_selector, row++, 0, 1, 2);
 
     layout->addWidget(parameters_error, row++, 0, 1, 2);
 

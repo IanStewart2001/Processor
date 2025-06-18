@@ -7,6 +7,7 @@
 #include <vector>
 #include <complex>
 #include <QLineEdit>
+#include <QComboBox>
 
 class QPushButton;
 class Window : public QWidget
@@ -37,11 +38,13 @@ class Window : public QWidget
             {-0.374692,-1.735}
         };
         */
+
     private slots:
         void open_file_dialog();
     private:
         QLabel* parameters_error;
         QPushButton* btn_file_select;
+        QComboBox* data_type_selector;
         long int sample_rate;
         float center_frequency;
         QLineEdit* sample_rate_input;
