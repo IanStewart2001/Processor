@@ -5,10 +5,7 @@
 #include <QChartView>
 #include <QValueAxis>
 
-//might need to remake this with the qcustomplot library to make more interactive with zooming, mouse actions, etc.
-
-
-constellation_plot::constellation_plot(QWidget* parent) : QWidget(parent) {
+constellation_plot::constellation_plot(QWidget* parent, const std::vector<std::complex<float> > &signal) : QWidget(parent) {
     move(0, 200);
     setMinimumSize(100, 100);
 
