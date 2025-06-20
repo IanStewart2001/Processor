@@ -1,4 +1,6 @@
 #include "constellation_plot.h"
+#include <vector>
+#include <complex>
 #include <QVBoxLayout>
 #include <QScatterSeries>
 #include <QChart>

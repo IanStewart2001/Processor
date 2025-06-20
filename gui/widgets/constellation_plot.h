@@ -1,5 +1,7 @@
 #pragma once
 #include <QWidget>
+#include <vector>
+#include <complex>
 
 class constellation_plot : public QWidget
 {
