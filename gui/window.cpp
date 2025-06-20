@@ -25,9 +25,9 @@ Window::Window(QWidget *parent) : QWidget(parent)
     connect(btn_show_constellation_plot, &QPushButton::clicked, this, [this]() {
         if(validate_inputs()){
             //auto* constellation_plot_widget = new constellation_plot(this, sample_data);
-            //auto* constellation_plot_widget = new constellation_plot(this, signal->get_baseband_data());  // Or use `nullptr` if you want it to be a top-level window
-            //constellation_plot_widget->setAttribute(Qt::WA_DeleteOnClose);
-            //constellation_plot_widget->show();
+            auto* constellation_plot_widget = new constellation_plot(this, signal->get_baseband_data());  // Or use `nullptr` if you want it to be a top-level window
+            constellation_plot_widget->setAttribute(Qt::WA_DeleteOnClose);
+            constellation_plot_widget->show();
         }
     });
 
