@@ -17,7 +17,10 @@ constellation_plot::constellation_plot(QWidget* parent, const std::vector<std::c
 
     auto* chart = new QChart();
     auto* series = new QScatterSeries();
-    series->append(1, 1);
+    for (int i = 0; i < signal.size(); i++){
+        series->append(signal.at(i).real(), signal.at(i).imag())
+    }
+    //series->append(1, 1);
     series->setName("Samples");
     chart->addSeries(series);
     chart->setTitle("Constellation Plot");
