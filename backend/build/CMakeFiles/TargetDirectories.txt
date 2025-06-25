@@ -1,5 +1,0 @@
-/Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles/MyDSPApp.dir
-/Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles/edit_cache.dir
-/Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles/rebuild_cache.dir
-/Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles/MyDSPApp_autogen_timestamp_deps.dir
-/Users/ian/Code/C++/DSP_Project/backend/build/CMakeFiles/MyDSPApp_autogen.dir
