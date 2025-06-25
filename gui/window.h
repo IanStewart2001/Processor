@@ -49,7 +49,7 @@ class Window : public QWidget
         float center_frequency;
         QLineEdit* sample_rate_input;
         QLineEdit* center_frequency_input;
-        QPushButton* btn_show_constellation_plot;
+        //QPushButton* btn_show_constellation_plot;
         QPushButton* btn_show_time_domain;
         QLabel* filename_label;
 };
