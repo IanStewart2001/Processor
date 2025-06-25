@@ -1,11 +1,16 @@
-#Ignore build artifacts
+# ========================
+# Build directories & files
+# ========================
 build/
-*/build/
+**/build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
 
-build.ninja
-.ninja_deps
-.ninja_log
-
+# ========================
+# Compiled Object Files & Executables
+# ========================
 *.o
 *.obj
 *.so
@@ -15,32 +20,52 @@ build.ninja
 *.lib
 *.exe
 
+# ========================
+# Qt Generated Files
+# ========================
 *.moc
 *.qrc
 *.pro.user
-MakeFile
+*.pro.user.*
+*.autosave
+*.qmake.stash
 ui_*.h
 moc_*.cpp
 qrc_*.cpp
 
-*.pro.user
-*.autosave
-
-#Ignore VSCode settings
+# ========================
+# IDE Config Files
+# ========================
 .vscode/
-
+.idea/
 *.xcworkspace
 *.xcuserstate
 *.xcodeproj
 
-*idea/
-
+# ========================
+# OS-specific Junk
+# ========================
 .DS_Store
-
 Thumbs.db
 
+# ========================
+# Ninja Build Files
+# ========================
+build.ninja
+.ninja_deps
+.ninja_log
+
+# ========================
+# Logs, Caches, Envs
+# ========================
 *.log
+.cache/
 *.env
 .env.*
-.cache/
+
+# ========================
+# Swap, Temp, Backup
+# ========================
 *.swp
+*.swo
+*~
