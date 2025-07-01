@@ -22,15 +22,16 @@ Window::Window(QWidget *parent) : QWidget(parent)
     connect(btn_file_select, &QPushButton::clicked, this, &Window::open_file_dialog);
 
     //Connects buttons to show the various plots
+    /*
     connect(btn_show_constellation_plot, &QPushButton::clicked, this, [this]() {
         if(validate_inputs()){
-            //auto* constellation_plot_widget = new constellation_plot(this, sample_data);
             auto* constellation_plot_widget = new constellation_plot(this, signal->get_baseband_data());  // Or use `nullptr` if you want it to be a top-level window
             constellation_plot_widget->setAttribute(Qt::WA_DeleteOnClose);
             constellation_plot_widget->show();
         }
     });
-
+    */
+    
     connect(btn_show_time_domain, &QPushButton::clicked, this, [this]() {
         if (validate_inputs()){
             //auto* time_domain_widget = new time_domain(this, sample_data);
@@ -40,6 +41,7 @@ Window::Window(QWidget *parent) : QWidget(parent)
             time_domain_widget->show();
         }
     });
+    
 
     connect(data_type_selector, &QComboBox::currentIndexChanged, this, [](int index) {
         qDebug() << "Selected index:" << index;
@@ -77,9 +79,9 @@ void Window::create_widgets(QWidget* parent){
     parameters_error->hide();
 
     //sets up buttons to show plots
-    btn_show_constellation_plot = new QPushButton("Show constellation plot", parent);
-    btn_show_constellation_plot->setFixedWidth(200);
-    btn_show_constellation_plot->hide();
+    //btn_show_constellation_plot = new QPushButton("Show constellation plot", parent);
+    //btn_show_constellation_plot->setFixedWidth(200);
+    //btn_show_constellation_plot->hide();
 
     btn_show_time_domain = new QPushButton("Show Time Domain", parent);
     btn_show_time_domain->setFixedWidth(200);
@@ -114,7 +116,7 @@ void Window::organize_widgets(QWidget* parent) {
     layout->addWidget(new QLabel("Center Frequency (Hz):", this), row++, 0, Qt::AlignLeft);
     layout->addWidget(center_frequency_input, row++, 0);
 
-    layout->addWidget(btn_show_constellation_plot, row++, 0, 1, 2, Qt::AlignLeft);
+    //layout->addWidget(btn_show_constellation_plot, row++, 0, 1, 2, Qt::AlignLeft);
     layout->addWidget(btn_show_time_domain, row++, 0, 1, 2, Qt::AlignLeft);
 
     this->setLayout(layout);
@@ -127,7 +129,7 @@ void Window::open_file_dialog(){
         this->filename_label->setText(filePath);
         sample_rate_input->show();
         center_frequency_input->show();
-        btn_show_constellation_plot->show();
+        //btn_show_constellation_plot->show();
         btn_show_time_domain->show();
     }
 }

@@ -1,8 +1,11 @@
 #include "time_domain.h"
 #include <QVBoxLayout>
 #include <iostream>
+#include <QAction>
+#include <vector>
+#include <complex>
 
-time_domain::time_domain(QWidget* parent, const std::vector<std::complex<float> > &signal) : QWidget(parent){
+time_domain::time_domain(QWidget* parent, const std::vector<std::complex<float> > &signal_input) : QWidget(parent), signal(signal_input){
     move(400,0);
     setMinimumSize(450, 250);
 
@@ -37,6 +40,10 @@ time_domain::time_domain(QWidget* parent, const std::vector<std::complex<float> 
     time_domain_plot->setInteraction(QCP::iRangeZoom, true);
     time_domain_plot->setInteraction(QCP::iSelectPlottables, true);
 
+    //Makes interactive menu for selected area
+    selection_menu = new QMenu(this);
+    QAction* constellation_plot_action = selection_menu->addAction("Constellation Plot");
+
     for(unsigned long i = 0; i < signal.size(); i++){
         time_domain_plot->graph(0)->addData(i, signal.at(i).real());
         time_domain_plot->graph(1)->addData(i, signal.at(i).imag());
@@ -50,6 +57,8 @@ time_domain::time_domain(QWidget* parent, const std::vector<std::complex<float> 
             // If already 2 lines exist, remove them
             if (vertical_markers.size() == 2) {
                 std::cout << "removed 2" << std::endl;
+                selected_samples.first_index = 0;
+                selected_samples.second_index = 0;
                 for (auto* line : vertical_markers) {
                     time_domain_plot->removeItem(line);
                 }
@@ -75,6 +84,11 @@ time_domain::time_domain(QWidget* parent, const std::vector<std::complex<float> 
                 //samples between markers = data[vertical_markers.at(0)->start->coords().x() : vertical_markers.at(1)->start->coords().x()]
                 std::cout << vertical_markers.at(0)->start->coords().x() << " - " << vertical_markers.at(1)->start->coords().x() << std::endl;
 
+                selected_samples.first_index = static_cast<long int>(vertical_markers.at(0)->start->coords().x());
+                selected_samples.second_index = static_cast<long int>(vertical_markers.at(1)->start->coords().x());
+
+                std::cout << selected_samples.first_index << selected_samples.second_index <<std::endl;
+
                 //Creates shaded region between two markers
                 selected_area->topLeft->setCoords(vertical_markers.at(0)->start->coords().x(), time_domain_plot->yAxis->range().upper);
                 selected_area->bottomRight->setCoords(vertical_markers.at(1)->start->coords().x(), time_domain_plot->yAxis->range().lower);
@@ -91,7 +105,29 @@ time_domain::time_domain(QWidget* parent, const std::vector<std::complex<float> 
         else if (event->button() == Qt::RightButton){
             //Enter code to bring up options for selected data (constellation plot, etc.)
             std::cout << "Right click" << std::endl;
+            selection_menu->exec(QCursor::pos());
+            selection_menu->show();
         }
     });
 
+    //connect the selection of constellatopn plot choise 
+    connect(constellation_plot_action, &QAction::triggered, this, &time_domain::onConstellationAction);
+}
+
+void time_domain::onConstellationAction() {
+    if (selected_samples.first_index < 0 || selected_samples.second_index <= selected_samples.first_index ||
+        selected_samples.second_index > static_cast<long>(signal.size())) {
+        qDebug() << "Invalid selected range";
+        std::cout << selected_samples.first_index << " " << selected_samples.second_index << " " << signal.size() << std::endl;
+        return;
+    }
+
+    std::vector<std::complex<float>> sub_vector(
+        signal.begin() + selected_samples.first_index,
+        signal.begin() + selected_samples.second_index
+    );
+
+    con_plot = new constellation_plot(this, sub_vector);
+    con_plot->show();  // or whatever you want to do
+    selection_menu->hide();
 }
