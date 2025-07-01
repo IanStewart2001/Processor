@@ -16,12 +16,14 @@ add_executable(GUI_APP
     widgets/constellation_plot.cpp
     widgets/power_spectrum.cpp
     widgets/time_domain.cpp
+    widgets/waterfall.cpp
     external/qcustomplot/qcustomplot.cpp
 
     window.h
     widgets/constellation_plot.h
     widgets/power_spectrum.h
     widgets/time_domain.h
+    widgets/waterfall.h
     external/qcustomplot/qcustomplot.h
 )
 
