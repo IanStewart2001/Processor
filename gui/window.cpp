@@ -143,7 +143,8 @@ bool Window::validate_inputs(){
         parameters_error->hide();
         sample_rate = static_cast<long int> (sample_rate_input->text().toLong());
         center_frequency = static_cast<float> (center_frequency_input->text().toDouble());
-        signal = new Signal("/Users/ian/GNU_Radio_Generated_IQ_Files/FSK_416000_SR_100000_CF_52000_MR.iq");
+        signal = new Signal(filename_label->text().toStdString());
+        //signal = new Signal("/Users/ian/GNU_Radio_Generated_IQ_Files/FSK_416000_SR_100000_CF_52000_MR.iq");
         return true;
     }
 }

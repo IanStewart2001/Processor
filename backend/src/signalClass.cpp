@@ -1,6 +1,7 @@
 #include "signalClass.h"
-#include <iostream>
 #include "kiss_fft_wrapper.h"
+#include <iostream>
+#include <filesystem>
 
 Signal::Signal(std::string filename){
     iq_data = read_in_file(filename);
@@ -13,6 +14,11 @@ Signal::Signal(std::string filename){
 }
 
 std::vector<std::complex<float> > Signal::read_in_file(std::string filename){
+    //check if filename ends in ".iq" extension.
+    //change this to throw an exception rather than std out
+    if (std::filesystem::path(filename).extension() != ".iq"){
+        std::cout << "File is not an IQ file" << std::endl;
+    }
     std::ifstream file(filename, std::ios::binary);
 
     file.seekg(0, std::ios::end);

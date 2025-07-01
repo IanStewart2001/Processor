@@ -8,6 +8,8 @@
 
 class Signal{
     private:
+        //still need to include data structure for different data type selected in main window. Right now it opens all files as complex32
+        //filename must end in .iq->temporary fix until I implement a way of determing whether the input file is a proper IQ file.
         std::string filename;
         std::vector<std::complex<float> > iq_data;
         std::vector<std::complex<float> > iq_baseband;
