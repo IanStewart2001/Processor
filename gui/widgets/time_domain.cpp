@@ -5,7 +5,9 @@
 #include <vector>
 #include <complex>
 
-time_domain::time_domain(QWidget* parent, const std::vector<std::complex<float> > &signal_input) : QWidget(parent), signal(signal_input){
+time_domain::time_domain(QWidget* parent, Signal* signal) : QWidget(parent){
+    //signal = signal;
+    iq_data = signal->get_baseband_data();
     move(400,0);
     setMinimumSize(450, 250);
 
@@ -44,9 +46,9 @@ time_domain::time_domain(QWidget* parent, const std::vector<std::complex<float> 
     selection_menu = new QMenu(this);
     QAction* constellation_plot_action = selection_menu->addAction("Constellation Plot");
 
-    for(unsigned long i = 0; i < signal.size(); i++){
-        time_domain_plot->graph(0)->addData(i, signal.at(i).real());
-        time_domain_plot->graph(1)->addData(i, signal.at(i).imag());
+    for(unsigned long i = 0; i < iq_data.size(); i++){
+        time_domain_plot->graph(0)->addData(i, iq_data.at(i).real());
+        time_domain_plot->graph(1)->addData(i, iq_data.at(i).imag());
     }
 
     connect(time_domain_plot, &QCustomPlot::mousePress, this, [=](QMouseEvent *event) {
@@ -116,18 +118,18 @@ time_domain::time_domain(QWidget* parent, const std::vector<std::complex<float> 
 
 void time_domain::onConstellationAction() {
     if (selected_samples.first_index < 0 || selected_samples.second_index <= selected_samples.first_index ||
-        selected_samples.second_index > static_cast<long>(signal.size())) {
+        selected_samples.second_index > static_cast<long>(iq_data.size())) {
         qDebug() << "Invalid selected range";
-        std::cout << selected_samples.first_index << " " << selected_samples.second_index << " " << signal.size() << std::endl;
+        std::cout << selected_samples.first_index << " " << selected_samples.second_index << " " << iq_data.size() << std::endl;
         return;
     }
 
     std::vector<std::complex<float>> sub_vector(
-        signal.begin() + selected_samples.first_index,
-        signal.begin() + selected_samples.second_index
+        iq_data.begin() + selected_samples.first_index,
+        iq_data.begin() + selected_samples.second_index
     );
 
-    con_plot = new constellation_plot(this, sub_vector);
+    con_plot = new constellation_plot(this, signal);
     con_plot->show();  // or whatever you want to do
     selection_menu->hide();
 }

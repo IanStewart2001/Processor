@@ -4,6 +4,7 @@
 #include <complex>
 #include <QVector>
 #include <QMenu>
+#include "signalClass.h"
 #include "qcustomplot.h"
 #include "constellation_plot.h"
 
@@ -12,8 +13,9 @@ class time_domain : public QWidget
     Q_OBJECT
 
     public:
-        explicit time_domain(QWidget* parent = nullptr, const std::vector<std::complex<float> > &signal = {});
-        std::vector<std::complex<float> > signal;
+        explicit time_domain(QWidget* parent = nullptr, Signal* signal = nullptr);
+        Signal* signal;
+        std::vector<std::complex<float> > iq_data;
         QVector<QCPItemLine*> vertical_markers;
         QCPItemRect* selected_area = nullptr;
         QMenu* selection_menu;

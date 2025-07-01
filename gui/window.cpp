@@ -36,7 +36,7 @@ Window::Window(QWidget *parent) : QWidget(parent)
         if (validate_inputs()){
             //auto* time_domain_widget = new time_domain(this, sample_data);
             std::cout << signal->get_baseband_data().at(0) << std::endl;
-            auto* time_domain_widget = new time_domain(this, signal->get_baseband_data());  // Or use `nullptr` if you want it to be a top-level window
+            auto* time_domain_widget = new time_domain(this, signal);  // Or use `nullptr` if you want it to be a top-level window
             time_domain_widget->setAttribute(Qt::WA_DeleteOnClose);
             time_domain_widget->show();
         }

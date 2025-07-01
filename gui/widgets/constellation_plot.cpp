@@ -7,7 +7,7 @@
 #include <QChartView>
 #include <QValueAxis>
 
-constellation_plot::constellation_plot(QWidget* parent, const std::vector<std::complex<float> > &signal) : QWidget(parent) {
+constellation_plot::constellation_plot(QWidget* parent, Signal* signal) : QWidget(parent) {
     move(0, 200);
     setMinimumSize(100, 100);
 
@@ -19,8 +19,8 @@ constellation_plot::constellation_plot(QWidget* parent, const std::vector<std::c
 
     auto* chart = new QChart();
     auto* series = new QScatterSeries();
-    for (int i = 0; i < signal.size(); i++){
-        series->append(signal.at(i).real(), signal.at(i).imag());
+    for (int i = 0; i < signal->get_baseband_data().size(); i++){
+        series->append(signal->get_baseband_data().at(i).real(), signal->get_baseband_data().at(i).imag());
     }
     //series->append(1, 1);
     series->setName("Samples");
