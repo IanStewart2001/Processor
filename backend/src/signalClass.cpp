@@ -63,9 +63,3 @@ std::vector<std::complex<float> > Signal::down_convert(){
     }
     return baseband_data;
 }
-
-std::vector<std::complex<float> > Signal::fft(){
-    std::vector<std::complex<float> > fft_result;
-    return fft_result;
-
-}
