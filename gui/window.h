@@ -51,6 +51,7 @@ class Window : public QWidget
         QLineEdit* center_frequency_input;
         //QPushButton* btn_show_constellation_plot;
         QPushButton* btn_show_time_domain;
+        QPushButton* btn_show_power_spectrum;
         QLabel* filename_label;
 };
 

@@ -1,6 +1,7 @@
 #include "window.h"
 #include "widgets/constellation_plot.h"
 #include "widgets/time_domain.h"
+#include "widgets/power_spectrum.h"
 #include <QPushButton>
 #include <QFileDialog>
 #include <QLabel>
@@ -39,6 +40,15 @@ Window::Window(QWidget *parent) : QWidget(parent)
             auto* time_domain_widget = new time_domain(this, signal);  // Or use `nullptr` if you want it to be a top-level window
             time_domain_widget->setAttribute(Qt::WA_DeleteOnClose);
             time_domain_widget->show();
+        }
+    });
+
+    connect(btn_show_power_spectrum, &QPushButton::clicked, this, [this](){
+        if (validate_inputs()){
+            //auto* time_domain_widget = new time_domain(this, sample_data);
+            auto* power_spectrum_widget = new power_spectrum(this, signal->get_baseband_data(), signal->get_sample_rate(), signal->get_center_frequency());  // Or use `nullptr` if you want it to be a top-level window
+            power_spectrum_widget->setAttribute(Qt::WA_DeleteOnClose);
+            power_spectrum_widget->show();
         }
     });
     
@@ -87,6 +97,10 @@ void Window::create_widgets(QWidget* parent){
     btn_show_time_domain->setFixedWidth(200);
     btn_show_time_domain->hide();
 
+    btn_show_power_spectrum = new QPushButton("Show Power Spectrum", parent);
+    btn_show_power_spectrum->setFixedWidth(200);
+    btn_show_power_spectrum->hide();
+
     //Label for chosen filename
     filename_label = new QLabel(parent);
 }
@@ -118,6 +132,7 @@ void Window::organize_widgets(QWidget* parent) {
 
     //layout->addWidget(btn_show_constellation_plot, row++, 0, 1, 2, Qt::AlignLeft);
     layout->addWidget(btn_show_time_domain, row++, 0, 1, 2, Qt::AlignLeft);
+    layout->addWidget(btn_show_power_spectrum, row++, 0, 1, 2, Qt::AlignLeft);
 
     this->setLayout(layout);
 }
@@ -131,6 +146,7 @@ void Window::open_file_dialog(){
         center_frequency_input->show();
         //btn_show_constellation_plot->show();
         btn_show_time_domain->show();
+        btn_show_power_spectrum->show();
     }
 }
 

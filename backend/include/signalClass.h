@@ -25,5 +25,4 @@ class Signal{
         long int get_sample_rate();
 
         std::vector<std::complex<float> > down_convert();
-        std::vector<std::complex<float> > fft();
 };
